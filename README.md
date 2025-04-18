@@ -1,2 +1,2 @@
 # shadaw-webapps-mono
-app small apps in the project well expand at a later time
+all shadawi small webapps in one place well expand at a later time
