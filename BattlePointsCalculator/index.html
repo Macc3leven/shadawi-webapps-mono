@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Calculation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        canvas {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btnHolder {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .tog {
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tog:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Battle Points Calculator</h1>
+    <br><br><br>
+
+<div class="container"></div>
+    <form id="myForm">
+        <label for="time">Time (in seconds):</label>
+        <input type="number" id="time" name="time" required>
+        <br>
+
+        <label for="damage">Damage:</label>
+        <input type="number" id="damage" name="damage" required>
+        <br>
+
+        <label for="defense">Defense:</label>
+        <input type="number" id="defense" name="defense" required>
+        <br>
+
+        <label for="health">Health:</label>
+        <input type="number" id="health" name="health" required>
+        <br>
+
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+
+    <div>
+        <p id="apm"></p>
+        <p id="dpm"></p>
+        <p id="bpm"></p>
+    </div>
+
+    <canvas id="myChart" width="400" height="400"></canvas>
+    <div class="btnHolder">
+        <button class="tog" onclick="toggle('bar')">BAR</button>
+        <button class="tog" onclick="toggle('line')">LINE</button>
+        <button class="tog" onclick="toggle('scatter')">SCATTER</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script> 
+        // JavaScript code here
+        const max_bp = 100000, max_ap = 50000, max_dp = 50000;
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart;
+
+        function calculate() {
+            var time = parseFloat(document.getElementById('time').value);
+            var damage = parseFloat(document.getElementById('damage').value);
+            var defense = parseFloat(document.getElementById('defense').value);
+            var health = parseFloat(document.getElementById('health').value);
+
+            var apm = ((60 / time) * damage).toFixed(2);
+            var dpm = ((60 / time) * defense).toFixed(2);
+            var bpm = (parseFloat(apm) + parseFloat(dpm) + health).toFixed(2);
+
+            document.getElementById('apm').innerHTML = 'APM: ' + apm;
+            document.getElementById('dpm').innerHTML = 'DPM: ' + dpm;
+            document.getElementById('bpm').innerHTML = 'BPM: ' + bpm;
+
+            updateChart(apm, dpm, bpm, health);
+        }
+
+        function updateChart(apm, dpm, bpm, health) {
+            var labels = ["apm", "dpm", "bpm"];
+            var datasets = [
+                {
+                    label: 'CURRENT',
+                    data: [apm, dpm, bpm],
+                    fill: true,
+                    backgroundColor: 'rgb(255, 0, 0, 0.3)',
+                    borderWidth: 2
+                },
+                {
+                    label: 'LIMIT',
+                    data: [max_ap, max_dp, max_bp],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 50, 250, 0.3)',
+                    borderWidth: 2
+                },
+            ];
+
+            if (myChart) {
+                myChart.destroy();
+            }
+            console.log(datasets, bpm)
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: { labels, datasets },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        async function toggle(type) {
+            // Add logic for different chart types if needed
+            // For simplicity, I'm only updating the chart type to bar
+            myChart.config.type = 'bar';
+            myChart.update();
+        }
+    </script>
+</body>
+</html>

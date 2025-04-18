@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+<div class="pg">
+  
+    
+    <div class="gameBox">
+        <div class="top">
+        <h1 id="timer">purging...</h1> <br> <br>    
+        </div>
+        
+        
+        <div class="hit_anim">
+            <h2 id="hit_num"> </h2>
+        </div>
+
+        <div class="playbox">
+            
+
+            <div class="brac">
+                <div class="slot"><button id="one">hit</button></div>
+                <div class="slot"><button id="two">hit</button></div>
+                <div class="slot"><button id="three">hit</button></div>
+            </div><br>
+            <div class="brac">
+                <div class="slot"><button id="four">hit</button></div>
+                <div class="slot"><button id="five">hit</button></div>
+                <div class="slot"><button id="six">hit</button></div>
+            </div><br>
+            <div class="brac">
+                <div class="slot"><button id="seven">hit</button></div>
+                <div class="slot"><button id="eight">hit</button></div>
+                <div class="slot"><button id="nine">hit</button></div>
+            </div>
+            
+
+
+        </div>
+
+        <div id="mghb">
+            <iframe src="./THREE JS/num2.html" frameborder="0"></iframe>
+        </div>
+
+    </div>
+
+    <p class="txt">Cloud Ogre          [Form: 1 of 3]</p>
+
+</div>
+    
+ 
+<!-- scrrrrript -->
+<script>
+    let currentProb = 1;
+    let win_status = document.getElementById("status");
+    let timer = document.getElementById("timer");
+    let hitNum = document.getElementById("hit_num");
+
+    let one = document.getElementById("one")
+    one.addEventListener("click", () => {
+        init(-340, 100, "one");
+  });
+    let two = document.getElementById("two")
+    two.addEventListener("click", () => {
+    init(1, 100, "two");
+  });
+    let three = document.getElementById("three")
+    three.addEventListener("click", () => {
+    init(340, 100, "three");
+  });
+
+    let four = document.getElementById("four")
+    four.addEventListener("click", () => {
+    init(-340, 250, "four");
+  });
+
+    let five = document.getElementById("five")
+    five.addEventListener("click", () => {
+    init(1, 250, "five");
+  });
+
+    let six = document.getElementById("six")
+    six.addEventListener("click", () => {
+    init(340, 250, "six");
+  });
+
+    let seven = document.getElementById("seven")
+    seven.addEventListener("click", () => {
+    init(-340, 380, "seven");
+  });
+
+    let eight = document.getElementById("eight")
+    eight.addEventListener("click", () => {
+    init(1, 380, "eight");
+  });
+
+    let nine = document.getElementById("nine")
+    nine.addEventListener("click", () => {
+    init(340, 380, "nine");
+  });
+
+
+
+
+
+    let hitOptions = [{title: "one", index: 0}, {title: "two", index: 1}, {title: "three", index: 2}, {title: "four", index: 3}, {title: "five", index: 4}, {title: "six", index: 5},{title: "seven", index: 6}, {title: "eight", index: 7}, {title: "nine", index: 8}]
+    let currentHit = hitOptions[rand(0, hitOptions.length)].title
+    let won = false;
+    const win = 42.5,
+    border = 10000;
+    console.log(currentHit)
+    let second = 10;  
+
+
+
+    function rand(low, high){
+    let between = high - low;
+    let juice = Math.random() * between,
+    unc = Math.floor(juice) + low;
+    return unc;
+    }
+
+   function placeHitNum(left, top){
+       hitNum.style.top = top + "px"
+       hitNum.style.left = left + "px" 
+   }
+
+    function jump(position) {
+        let stop = position - 100;
+        let opac = 1;
+        let move = position
+        
+        const up = setInterval(hop, 60);
+        function hop(){
+        if(move < stop){
+        clearInterval(up)
+        hitNum.style.opacity = 0
+            }else{
+            hitNum.style.top = move + "px";
+            move -= 15;
+            hitNum.style.opacity = opac
+            opac -= .18;
+            }
+        }
+
+    }
+
+    function init(left, top, name){
+    //set location
+        if(name == currentHit){
+        placeHitNum(left, top);
+        let choice = rand(1,1000);
+        hitNum.innerText = choice;
+        jump(top);
+        //if num correct window alert win 
+        if(choice < win && second > 0){
+            won = true;
+            window.alert("YOU WON A CLOUD OGRE")}
+        }
+    }
+
+
+    (function game(){  
+    let stillColor = "azure",
+    pastBlock = one;
+
+    
+    const countdown = setInterval(()=> {    
+        timer.innerText = second
+        second -= 1;
+        if(second < 0 && !won){
+            clearInterval(countdown)
+            timer.innerText = "TIME IS UP"
+            window.alert("Time is Up");
+        }else if(second < 0){
+        timer.innerText = "TIME IS UP"
+        }
+    }, 1000);
+
+    const swap = setInterval(_switch, 450);
+    function _switch(){
+    let options = [one,two,three,four,five,six,seven,eight,nine];  
+    let hit = hitOptions[rand(0, hitOptions.length)]
+
+    currentHit = hit.title;
+    pastBlock = options[hit.index];
+    options[hit.index].style.backgroundColor = "blue";
+    let uncolor = setTimeout(()=> {
+        pastBlock.style.backgroundColor = stillColor
+    }, 250);
+    
+    
+    
+    
+    
+    }
+    })();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

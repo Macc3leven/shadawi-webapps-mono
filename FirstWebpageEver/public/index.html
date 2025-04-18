@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://use.typekit.net/yrj7xie.css">
+    <title>Shad Site</title>
+</head>
+<body>
+<style>
+    *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url(./Images/Home/b3.png);
+    background-size: 360%;
+    background-origin: content-box;
+
+    font-family: bungee,sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    color: white; 
+}
+
+a:link{
+    text-decoration: none;
+}
+
+
+/* TOP */
+.pg{   
+    justify-content: center;
+    text-align: center;
+    max-width: 100%; 
+    margin: 0 auto;
+}
+
+.bigtxt{
+    font-size: 50px;
+    padding-bottom: 1rem;
+}
+
+.logo > *{
+    max-width: 75%;
+    padding: 2rem 2rem;
+}
+
+.directry{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .big_btns{
+        display: flex;
+        justify-content: space-between;
+        min-width:max-content;
+        margin: 0 auto;
+        padding-bottom: 5px;
+       padding: 1px 20px;
+       position: relative;
+    }
+
+    .bigbtn{
+        padding: 1px 15px;
+        background: rgba(196, 196, 196, 0.28);
+        border: 7px solid #000000;
+        border-radius: 15px;
+        font-family: bungee,sans-serif;
+        font-size: 1.2rem;
+        width: 25%;
+        min-width: max-content;
+        color: white;
+        position: relative;
+    }
+
+    @media all and (max-width: 768px){
+        .bigbtn{
+            font-size: small;
+        }
+    }
+
+
+    .redirect{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        font-size: small;
+    }
+
+    .redirect > * {
+        color: rgb(255, 170, 139);
+    }
+
+
+.welcome{
+    position: relative;
+    width: 95%;
+    display: flex;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    justify-content: space-around;
+    gap: 10%;
+}
+
+    .welcome_txt{
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        text-align: left;
+        align-self: stretch;
+        padding: 5px;
+        margin-top: 50px;
+        font-size: small;
+
+        
+    }
+
+    .wg > img{
+        position: relative;
+        width: 125%;
+        right: 20px;
+    }
+
+    .gems{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .gem{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 1px;
+    }
+
+    .gemtxt{
+        text-align: center;
+        width: 50px;
+    }
+
+    .gem > img{
+        width: 30%;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* gallery */
+#gallery_section{
+position: relative;
+display: flex;
+flex-direction: row;
+gap: 2rem;
+margin-bottom: 200px;
+text-align: center;
+width: 100%;
+padding: 2rem 2rem;
+}
+
+
+@media all and (max-width: 1000px){
+    #gallery_section{
+        flex-direction: column;
+    }
+}
+
+#media_cont{
+position: relative;
+display: flex;
+align-items: stretch;
+width: 98%;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.media_scroller{
+display: grid;
+gap: 80%;
+grid-auto-flow: column dense;
+grid-auto-columns: 29%;
+overflow-y: hidden;
+overflow-x: scroll;
+/* overscroll-behavior-inline: contain; */
+/* scroll-padding-right: 50px; */
+/* padding: 0px 50rem; */
+align-items: center;
+/* width: 95%; */
+
+    /* figma */
+border: 8px solid #000000;
+box-sizing: border-box;
+border-radius: 10px;
+margin: 0 auto; 
+position: relative;
+padding: 0px 5px;
+}
+
+    .media_element {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: min-content;
+    background: var(--surface-2);
+    border-radius: 30px;
+    box-shadow: #000000 25px;
+    width: 320px;
+    height: 320px;
+    border-radius: 15px;
+    position: relative;
+    border: 8px solid black;
+    }
+
+    .media_element > img{
+    inline-size: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    }
+
+    .snaps-inline{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 1rem;
+    }
+
+    .snaps-inline > * {
+        scroll-snap-align: start;
+    }
+
+    .stat_btn{
+        position: absolute;
+        background-color: #00000034;
+        width: max-content;
+        padding: 2% 5%;
+        z-index: 2;
+        left: 110px;
+        bottom: 20px;
+        border: 2px solid azure;
+        border-radius: 15px;
+        font-weight: 900;
+        color: azure;
+        box-shadow: 4px 4px #888888;
+    }
+
+
+/* stats */
+#stat_section{
+background-color: #83838357;
+border: 7px solid #000000;
+border-radius: 15px;
+width: 98%;
+max-width: 600px;
+margin: 0 auto;
+padding: 5px 5px;
+}
+
+
+    #stats{
+        padding: 10px 5%;
+        max-width: 60%;
+    }
+
+
+    .stat{
+        text-align: left;
+        width: 100%;
+    }
+
+    #discription_box{
+        border: 5px solid #000000;
+        border-radius: 15px;
+        width: 99%;
+        margin: 0 auto;
+        margin-top: 5px;
+        padding: 5px;
+    }
+
+    .name_form{
+        display: flex;
+        flex-direction: row;
+    
+        text-align: start;
+        max-width: 98%;
+        min-width: max-content;
+        gap: 10%;
+    }
+
+    #form_{
+        min-width: max-content;
+    }
+
+    @media all and (max-width: 700px){
+    .name_form{
+        flex-direction: column;
+    }
+}
+
+    .stxt{
+    font-size: small;
+    }
+
+    .stats_under{
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    .stat_dir{
+        padding: 10px 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        gap: 10%;
+        min-width: 100px;
+        width: 40%;
+    }
+
+
+    .stat_dir > *{
+        background-color: rgb(56, 139, 255);
+        padding: 2px 18px;
+        border-radius: 18px;
+        font-size: 60%;
+        border: 4px solid black;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    .stat_dir > * > a{
+        color: aliceblue;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* events */
+.events_section{
+    position: relative;
+    margin-top: 200px;
+    width: 98%;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 200px;
+}
+
+.events_section > * {
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    align-items: stretch;
+    max-width: 98%;
+}
+
+p{
+    font-size: small;
+}
+
+.mint_tracker{
+    position: relative;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+
+    padding-right: 5px;
+    padding-top: 10%;
+    padding-bottom: 100px;
+}
+
+/* clock */
+.countdown_cont{
+margin: 0 auto;
+position: relative;
+min-width: 280px;
+}
+
+.clock {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    min-height: 200px;
+    position: relative;
+  }
+
+  h1 {
+    line-height: 2.8rem;
+    text-transform: uppercase;
+  }
+
+ li{
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 5px;
+    /* padding-top: 10px; */
+    text-transform: uppercase;
+  }
+
+  li span {
+    display: block;
+    font-size: 2em;
+    padding: 1.5rem;
+  }
+
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: calc(1rem * var(--smaller));
+    }
+
+    li {
+      font-size: calc(.8rem * var(--smaller));
+    }
+
+    li span {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+
+    .events_section{
+        flex-direction: column;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Roadmap */
+.roadmap_section{
+    margin-bottom: 200px;
+    display: flex;
+
+    max-width: 98%;
+    margin: 0 auto;
+    padding-bottom: 400px;
+}
+
+    .art_block{
+        display: auto;
+        max-width: 45%;
+    }
+
+    .art_block > img{
+        position: relative;
+        max-width: 99%;
+    }
+
+    .roadmap_read{
+    width: 80%;
+    max-width: 40rem;
+    margin: 0 auto;
+
+    }
+
+    .roadmap_read > h1{
+        font-size: xx-large;
+    }
+
+    .roadmap_read > p{
+        font-size: 15px;
+        padding: 1px 30px;
+    }
+
+
+    @media all and (max-width: 768px){
+        .art_block{
+            display: none;
+        }
+    }
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+/* creators */
+#creator_section{
+margin-top: 200px;
+padding-bottom: 40px;
+max-width: 98%;
+margin: 0 auto;
+}
+
+#creator_cont{
+display: grid;
+gap: 12rem;
+grid-auto-flow: column;
+overflow-y: clip;
+overflow-x: scroll;
+overscroll-behavior-inline: contain;
+padding-bottom: 55px;
+padding: 5px 5px 5px 5px;
+
+    /* figma */
+width: 98%;
+height: auto;
+margin: 0 auto; 
+position: relative;
+}
+
+.creator{
+    padding: 10px;
+    min-width: 20rem;
+    max-height: fit-content;
+    position: relative;
+}
+
+.creator > *{
+    position: relative;
+    margin: 0 auto;
+    max-width: 20rem;
+    height: max-content;
+    padding: 5px 10px;
+    font-size: small;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.creator > img{
+    width: fit-content;
+    /* width: 12rem; */
+}
+
+.rating{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.creator_text{
+position: relative;
+font-weight: 800;
+}
+
+
+/* end */
+.end{
+    position: relative;
+    padding-top: 40px;
+    height: 320px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    justify-content: center;
+    text-align: center;
+}
+
+.social{
+    position: relative;
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    gap: 20%;
+}
+
+.line{
+    background-color: azure;
+    height: 1px;
+    margin: 0 auto;
+    max-width: 95%;
+    margin-top: 80px;
+}
+
+.last{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 95%;
+    
+}
+</style>
+
+
+
+
+
+
+<!-- -------------------------------------------------------HTML---------------------------------------------------- -->
+<div class="pg">
+   <!-- TOP -->
+    <div class="logo">
+        <img src="./Images/Home/logo-white.png" alt="">
+    </div><br><br>
+
+
+    <div class="directry">
+        <div class="big_btns">
+            <button class="bigbtn "> <a href="./public-mint.html">MINT SHADAWI</a> </button>
+            <button class="bigbtn "><a href="./crystal-mine.html">CRYSTAL MINE</a></button>
+        </div>
+
+
+        <div class="redirect">
+            <a href="./docs.html">DOCS</a>
+            <a href="./how-to-connect.html">HOW TO CONNECT</a>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+
+    
+    
+    
+    <div class="welcome">
+        <div class="wg">
+            <img src="./Images/Home/WoodGirl2 1.png" alt="">
+        </div>
+
+        <div class="welcome_txt">
+        <h1 class="bigtxt">WELCOME!</h1>
+        <article class="smalltxt">Shadawi is an ERC-721 collection of specimen on the polygon network. The evolution times are automatically set by the blockchain. Holders of an “Evo” type specimen may use the crystal mine for free until July 1st. Crystals can be used to speed up the evolvolution time, or be held as secondary currency.</article>
+        <br><br>
+        <div class="gems">
+            <div class="gem">
+                <img src="./Images/CrystaMinePg/crystals/BeastCrystal.png" alt="BeastCrystal">
+                <div class="gemtxt">55</div>
+            </div>
+
+            <div class="gem">
+                <img src="./Images/CrystaMinePg/crystals/DEVINECRYSTAL.png" alt="DevineCrystal">
+                <div class="gemtxt">55</div>
+            </div>
+
+            <div class="gem">
+                <img src="./Images/CrystaMinePg/crystals/GasCrystal.png" alt="GasCrystal">
+                <div class="gemtxt">55</div>
+            </div>
+
+            <div class="gem">
+                <img src="./Images/CrystaMinePg/crystals/humanoidCrystal.png" alt="HumanoidCrystal">
+                <div class="gemtxt">55</div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <!-- GALLERY  -->
+    <h1 class="title">GALLERY</h1>
+    <div id="gallery_section">  
+        <div id="media_cont">  
+            <div class="media_scroller snaps-inline" id="gall">
+                <!-- waiting for javascript fetch... -->
+            </div>
+        </div>
+        
+        
+
+        <!-- STATS -->
+        <div id="stat_section">
+           
+
+            <div id="discription_box">
+                <h class="stxt">Discription</h3>
+                <p class="stxt" id="disc_txt"> Please click on stats to see the latest specs</p>
+            </div>
+            
+            <div class="stats_under">
+                <div id="stats">
+                    <div class="stxt">
+                    <div class="name_form">
+                        <h3  class="stat" id="name_">name</h3>
+                        <p id="form_">Form:</form></p>
+                    </div>  <br>
+                    
+                    <div class="stat" id="class_">Class</div>
+                    <div class="stat" id="population_">population</div>
+                    <div class="stat" id="purg_">purg lvl</div>
+                    <div class="stat" id="ability_">abities</div>    
+                    <div class="stat" id="build_">build</div>
+                    </div>
+                </div>
+<br>
+                <div class="stat_dir">
+                    <div>
+                        <a id="display3d" href="https://google.com" target="_blank">DISPLAY</a>
+                    </div>
+                    <div>
+                        <a id="opensea_link" href="https://google.com" target="_blank">OPENSEA</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+        </div>
+
+    </div> <!-- gallery end -->
+
+
+
+
+    <!-- events -->
+    <div id="eventall" class="events_section">
+    
+    <div class="block1">
+        <h1 class="bigtxt">EVENTS</h1>
+        <div id="event_feed">
+            <p>No events at this time..</p>
+           
+        </div>
+    </div>
+
+    <div class="block2">
+        <div class="countdown_cont"> 
+        <div class="clock">
+            <h1 id="headline" class="bigtxt">Public Mint Launch</h1>
+            
+            <div id="countdown">
+            <ul class="units">
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hours</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+            
+            </ul>
+            </div>
+        </div>
+        </div>
+
+        <div class="mint_tracker">
+            <p>Minted</p>
+            <h1 id="mint_stat" class="bigtxt">0</h1><h1 class="bigtxt">/500</h1> 
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <!-- roadmap -->
+    <h1 class="bigtxt">ROADMAP</h1><br><br><br>
+    <div class="roadmap_section">
+        <div id="rmi" class="block1 art_block">
+            <img src="./Images/Home/MightBird-site.png" alt="">
+        </div>
+
+        <div id="rmr" class="roadmap_read">
+            <h1>PUBLIC MINT</h1>
+            <p>Public mint will generate random shadawi from accross the polygon Galaxy into your wallet</p>
+            <br><br><br><br>
+            
+            <h1>500 MINTS</h1>
+            <p>For the first round we are aiming to get 500 mints. Owners of token #1 of selected shadawi will recieve a free meta-quest on release of the Open World Beta.</p>
+            <br><br><br><br>
+            
+            <h1>100 SPECIMEN</h1>
+            <p>The shadawi research team is working hard and wont stop until we find all specimen that exist.</p>
+            <br><br><br><br>
+            
+            <h1>BAttle rewards</h1>
+            <p>PVP battle & rewards will be exclusive to our dicord members.</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- creators -->
+    <div id="creator_section">
+        <h1 class="bigtxt">~CREATORS~</h1>
+        <div id="creator_cont">
+        <div class="creator">
+            <img src="./Images/creators/c1.png" alt="">
+            <div class="creator_text">
+                <p class="name">ONEIRIC</p>
+                <div class="rating"><p>Rating: </p> <p>100%</p></div><br>
+                <p">hello my name is oneiric join me on an epic battle of the cosmos</p>
+            </div>
+        </div>
+    
+       
+        </div>
+    </div>
+
+
+    <!-- end block -->
+    <div class="end">
+        <div class="social">
+            <a href="https://twitter.com/shadawi_nft"><img src="./Images/social/Vector.png" alt="join our discord"></a>  
+
+            <a href="https://discord.gg/nb9GFfPnnW"><img src="./Images/social/Vector (1).png" alt="join our discord"></a>  
+
+            <a href="https://www.instagram.com/Shadawi_NFT/"><img src="./Images/social/Vector (2).png" alt="follow us on instagram"></a>  
+        </div>
+
+        <p>Join Us On Discord</p>
+
+        <div class="line"></div>
+        <div class="last">
+            <p class="terms">Terms Of Service</p> <p>shadawi®</p>
+        </div>
+    </div>
+
+
+
+    
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------------------JAVASCRIPT---------------------------------------------------------->
+<script>    
+
+//-----GALLERY-----//
+let existing = 0;
+const _gallery = document.getElementById("gall");
+const display = document.getElementById("display3d");
+const openseaDir = document.getElementById("opensea_link");
+const minted_ = document.getElementById("mint_stat");
+
+const discription = document.getElementById("disc_txt");
+const statName = document.getElementById("name_");
+const statForm = document.getElementById("form_");
+const statClass = document.getElementById("class_");
+const statPop = document.getElementById("population_");
+const statPurg = document.getElementById("purg_");
+const statAbility = document.getElementById("ability_");
+const statBuild = document.getElementById("build_");
+
+
+var shadawiDB = [];
+
+fetch("./database.json").then(
+response => response.json()).then(
+data => {
+shadawiDB = data.list
+makeGallery()
+console.log(shadawiDB)
+})
+
+function makeGallery(){
+shadawiDB.forEach(element => {
+appendGallery(element);
+});    
+}
+
+fetch("./events.json").then(
+response => response.json()).then(
+data => {
+let minted = data.globalMint
+minted_.innerHTML = minted
+})
+
+
+
+
+
+function appendGallery(_dawiObj) {
+  //img
+    let _img = document.createElement('img');
+    _img.src = _dawiObj.img//`./Images/gallery/${_dawiObj.name}.jpg`;
+
+  //btn
+  let _btn = document.createElement("button");
+  _btn.classList.add("stat_btn")
+  _btn.innerText = "STATS >"
+  statOptions(_btn, _dawiObj);
+
+
+  //div
+  const newItem = document.createElement('div')
+  newItem.classList.add("media_element");   
+  newItem.appendChild(_img);
+  newItem.appendChild(_btn);
+  _gallery.appendChild(newItem);
+
+  /**save every json in array, set the images, on click 
+  display the stats, we might need to add id */
+}
+
+
+function statOptions(buttonElement, dawiObj){
+  const shad = dawiObj;
+  buttonElement.addEventListener("click", (event)=>{
+    event.preventDefault();
+    updateStatBox(
+      shad.discription,
+      `Name: ${shad.name}`,    
+      `Form: ${shad.form}`,
+      `Class: ${"devine"}`,
+      `Population: ${shad.minted} /${shad.population}`, //must call blockchain
+      `Purg Lvl: ${shad.purg}`,
+      `Abilities: ${shad.abilities}`,
+      `Build: ${shad.build}`,
+      dawiObj.openSea,
+      dawiObj.display
+    )
+  })
+
+}
+
+
+function updateStatBox(disc, name, form, clss, population, purg, ability, build, seaLink, _dis){
+  discription.innerHTML = disc;
+  statName.innerText = name;
+  statForm.innerText = form;
+  statClass.innerText = clss;
+  statPop.innerText = population;
+  statPurg.innerText = purg;
+  statAbility.innerText = ability;
+  statBuild.innerText = build;
+
+  openseaDir.href = seaLink;
+  display.href = _dis;
+}
+
+
+
+
+
+
+
+//-----CLOCK-----//
+(function () {
+    const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+    
+    const countDown = new Date("7/20/2022").getTime(), //put deadline here
+        x = setInterval(function() {    
+  
+          const now = new Date().getTime(),
+                distance = countDown - now;
+  
+            document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+  
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "Mass Mint is now available";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+*{
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(43, 43, 43);
+    font-family: bungee,sans-serif;
+    /* font-weight: 400; */
+    font-size: 24px;
+    color: white; 
+}
+
+.pg{
+    text-align: center;
+    height: 100%;
+}
+
+#mghb{
+    /* position: absolute; */
+    width: 8rem;
+    height: 8rem;
+    border-radius: 15%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    /* background-color: aliceblue; */
+
+    
+}
+
+#mghb > *{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    /* border: 25rem black; */
+}
+
+.top{
+    position: relative;
+}
+
+.gameBox{
+    position: relative;
+    text-align: center;
+    top: 1px;
+    background-color: rgb(97, 216, 255);
+    width: 95%;
+    height: 700px;
+    margin: 0 auto;
+    border: black 8px;
+    border-radius: 15px;
+    opacity: .8;
+}
+
+#hit_num{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    /* margin-top: 40px; */
+    opacity: 1;
+    /* margin-top: 1rem; */
+    top: 100px;
+    left: 340px;
+    z-index: 2;
+}
+
+.playbox{
+    margin: 0 auto;
+}
+
+.slot{
+    background-color: rgba(240, 255, 255, 0.184);
+    width: 20rem;
+    height: 7rem;
+    border-radius: 15px;
+    opacity: .5;
+}
+
+.slot > *{
+    width: 99%;
+    height: 99%;
+    opacity: 0.4;
+    border-radius: 15px;
+    background-color: rgba(255, 0, 0, 0.484);
+}
+
+.brac{
+    /* background-color: antiquewhite; */
+    display: flex;
+    padding-bottom: 5px;
+    gap: 1rem;
+    width: 98%;
+    margin: 0 auto;
+    max-width: max-content;
+}
+
+.txt{
+    z-index: 5;
+    color: aliceblue;
+    margin-top: 50px;
+}

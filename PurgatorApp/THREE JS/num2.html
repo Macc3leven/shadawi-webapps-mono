@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreeJS Fun</title>
+    <style>
+        body{
+            background:#000;
+            padding:0px;
+            margin:0px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div id="brd">
+
+    </div>
+
+
+    
+    <script type="module">
+        import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+        import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/GLTFLoader.js';
+        //import { OrbitControls, MapControls } from './orbit.js'
+        let brd_cont = document.getElementById("brd");
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        document.body.appendChild( renderer.domElement );//this used to be document.body
+        
+        const loader = new GLTFLoader();
+        //const controls = new OrbitControls(camera, renderer.domElement)
+        camera.position.set( 0, 300, 300 );
+        //controls.update();
+        
+        const light = new THREE.SpotLight()
+        light.position.set(-20, 15, 120)
+        scene.add(light);
+
+
+        const shadawi = ['./3D/CloudOgreGLB.glb', './3D/MB Low (Animated).glb']
+        const mghb = await loader.loadAsync(shadawi[0]);
+        scene.add(mghb.scene);
+        console.log(camera.position.y);
+        scene.background = new THREE.Color('#72c0ff');
+
+        
+        //functions
+        let scle = 50;
+        mghb.scene.scale.set(scle,scle,scle)
+        function animate() {
+            requestAnimationFrame( animate );
+            renderer.render( scene, camera );
+            mghb.scene.rotation.y += .03;
+        }
+        animate();
+
+
+        function onResize(){
+            camera.aspect = window.innerWidth/ window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        window.addEventListener('resize', onResize, false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/yrj7xie.css">
+    <!-- <link rel="stylesheet" href="./home.css"> -->
+    <title>Shadawi Mint</title>
+
+    <style>
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+
+    body{
+    background: #0F2027; 
+    background-image: url(./Images/Home/MintSign2.png);
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+
+    .pg{
+        min-height: 900px;
+        max-width: 100%;
+        margin: 0 auto;
+        /* background-color: #a56a6a; */
+    }
+
+    .pg>*{
+   max-height: max-content;
+    }
+
+   
+
+
+    .mint_cont{
+        position: relative;
+        max-width: 310px;
+        height: 270px;
+        margin: 0 auto;
+        text-align: center;
+        top: 32rem;
+        display: none;
+
+        /* border: 5px solid rgba(35, 55, 70, 0.797);
+        border-radius: 15px;
+        background-color: rgba(127, 202, 255, 0.273); */
+    }
+    .mint_cont > *{
+        position: relative;
+        width: fit-content;
+        max-width: 90%;
+        align-items: center;
+
+    }
+    .price_{
+        position: relative;
+        margin: 0 auto;
+        bottom: 1px;
+    }
+    .mint_opt{
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+
+
+    .mint_opt > * {
+        position: relative;
+        border: 5px solid #1b1b1b;
+        border-radius: 40px;
+        padding: 5px;
+        top: 65px;
+    }
+
+
+    .counter{
+        width: 5rem;
+        background-color: #1b1b1b;
+        color: wheat;
+    }
+
+    .mint_opt > button{
+    padding: 0px 10px;
+    background-color: #1b1b1b;
+    color: azure;
+    }
+
+    #mint_Btn{
+    border: 5px solid #000000;
+    border-radius: 20px;
+    padding: .8rem 3rem;
+    background-color: rgb(148, 148, 134);
+    color: azure;  
+    top: 8rem;
+    font-family: sans-serif;
+    font-weight: 900;
+    }
+
+
+
+
+
+    .utils{
+        position: absolute;
+        height: max-content;
+        width: 70%;
+        top: 440px;
+        display: flex;
+        justify-content: end;
+        gap: 1%;
+        
+    }
+
+    .log_stat{
+        height: 50px;
+        width: max-content;
+        padding: 5px 15px;
+        border: 5px solid #000000;
+        border-radius: 20px;
+        background-color: rgb(122, 129, 129);
+        display: none;
+    }
+    .logout_cont{
+        border-radius: 50px;
+        background-color: rgb(122, 129, 129); 
+        padding: 5px 20px;
+        display: flex;
+        justify-content: center;
+        width: 20px;
+        align-self: flex-end;
+        display: none;
+    }
+    .logout_cont > img{
+        width: 20px;
+        height: 20px;
+    }
+
+    #hide{
+        display: none;
+    }
+    .hide{
+        display: none;
+    }
+
+    
+
+
+
+
+
+    .info{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 300px;
+        top: 140px;
+        margin: 0 auto;
+    }
+
+    .info > *{
+        color: #dcdcdc;
+        width: max-content;
+        font-family: sans-serif;
+        font-size: small;
+        background-color: #5555559c;
+        padding: 1px 10px;
+        border-radius: 20px;
+    }
+
+
+
+
+
+     .msgBox{
+         width: 80%;
+         position: absolute;
+         top: 30%;
+         left: 0px;
+         right: 0px;
+         margin: 0 auto;
+
+         background-color: #0f2027de;
+         border: #091216 solid 5px;
+         border-radius: 25px;
+         padding: 10% 15%;
+         left: 50px;
+         color: azure;
+         font-weight: 700;
+         font-size: larger;
+         
+     }
+    
+     .sea{
+         color: rgb(139, 139, 255);
+     }
+
+
+
+
+
+    .redir{
+        display: flex;
+        position: relative;
+        width: 90%;
+
+        justify-content: center;
+        margin: 0 auto;
+        gap: 15%;
+        font-size: small;
+    }
+
+    .dir{
+        background-color: #000000ac;
+        padding: 1rem 1.4rem;
+        
+    }
+    .dir > *{
+        color: white;
+    }
+
+
+
+
+/* -----AFTER THE MINT------- */
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body> 
+
+    <div class="pg">
+
+        <div class="utils">
+            <div class="logout_cont"><img src="./Images/Home/close.png" alt=""></div>
+            <button class="log_stat">please Connect</button>
+        </div>
+    
+
+        <div class="mint_cont">
+            <div class="mint_opt">
+                <button class="down">-</button>
+                <div class="counter">0</div>
+                <button class="up">+</button>
+            </div>
+            
+            <button type="button" id="mint_Btn"> MINT</button>
+            <p class="price_"> 100 matic</p>
+
+            <div class="info"> 
+                <a href="" class="openSea">SHADAWI ®</a>  
+                <a href="" class="contract_link">0xfb7b...a590c</a>
+            </div>
+        </div>
+
+        
+        
+
+        <div class="redir">
+            <div class="dir"><a href="./docs.html" class="docs_">Docs</a></div>
+            <div class="dir"><a href="./index.html" class="home_">home</a></div>
+            <div class="dir"><a href="./faqs.html" class="faqs_">Faqs</a></div>
+        </div>
+
+        <div class="msgBox">
+            <p class="message">
+            Welcome! the public minter is not yet ready. There is not enough shadawi for a feasible mint. 
+            <br><br>
+            for now you may visit us on <a class="sea" href="https://opensea.io/SHADAWI?tab=created">openSea</a>
+            </p>
+        </div>
+
+  <!-- -------- AFTER THE MINT--------- -->
+  
+
+    </div><!-- end -->
+
+
+
+    
+    <script>
+
+
+
+    </script>
+</body>
+</html>
